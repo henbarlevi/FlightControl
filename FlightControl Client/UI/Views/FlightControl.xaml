@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="UI.Views.FlightControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UI.Views"
+             xmlns:Contract ="clr-namespace:FlightControl.Contract.Entities;assembly=FlightControl.Contract"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1000" Background="AliceBlue" >
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="\images\תמונת שדה תעופה3.png"/>
+        </Grid.Background>
+        <ContentControl Width="200" Height="200" Content="{Binding StationZeroPlane}" Margin="840,35,-40,415"/>
+        <ContentControl Width="200" Height="200" Content="{Binding StationOnePlane}" Margin="705,66,95,384"/>
+        <ContentControl Width="200" Height="200" Content="{Binding StationTwoPlane}" Margin="571,109,229,341"/>
+        <ContentControl Width="200" Height="200" Content="{Binding StationThreePlane}" Margin="456,157,344,293"></ContentControl>
+        <ContentControl Width="200" Height="200" Content="{Binding StationFourPlane}" Margin="198,284,602,166"/>
+        <ContentControl Width="200" Height="200" Content="{Binding StationFivePlane}" Margin="366,284,434,166"/>
+        <ContentControl Width="200" Height="200" Content="{Binding StationSixPlane}" Margin="503,284,297,166"/>
+        <ContentControl Width="200" Height="200" Content="{Binding StationSevenPlane}" Margin="678,284,122,166"/>
+        <ContentControl Width="200" Height="200" Content="{Binding StationEightPlane}" Margin="0,35,800,415"/>
+        <!--<ListBox Background="Transparent" ItemsSource="{Binding Airport}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="C:\Users\hen\Desktop\פרוייקט לימוד סופי 3\FlightControl Client\UI\images\מטוס2.png" ></Image>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ListBox>-->
+    
+    </Grid>
+</UserControl>

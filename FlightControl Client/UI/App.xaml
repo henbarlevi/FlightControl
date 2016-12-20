@@ -1,0 +1,30 @@
+<Application x:Class="UI.App" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:local="clr-namespace:UI" StartupUri="MainWindow.xaml" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" 
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Contract="clr-namespace:FlightControl.Contract.Entities;assembly=FlightControl.Contract"
+             xmlns:converters="clr-namespace:UI.Converters"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:UI.ViewModel" />
+            <!--Converters-->
+            <converters:ImageSourcePlaneConverter x:Key="ImageSourcePlaneConverter"/>
+            <!--Templates-->
+            <DataTemplate DataType="{x:Type Contract:PlaneDTO}">
+                <StackPanel Height="500">
+                    <TextBlock FontSize="20" Foreground="Blue" FontFamily="Comic Sans MS" Padding="70,0" Width="800" Text="{Binding Path=CompanyName}" />
+                    <Image Source="{Binding StationId,Converter={StaticResource ImageSourcePlaneConverter}}" Height="80" Width="40"/>
+                    <TextBlock FontSize="15" Foreground="Pink" FontFamily="Comic Sans MS" Padding="70,0" Width="800"  >
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} + {1}">
+                                <Binding Path= "PlaneId" />
+                                <Binding Path="State" />
+                            </MultiBinding>
+                        </TextBlock.Text></TextBlock>
+                </StackPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="UI.Views.FlightHistory"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="700" Background="#FFE8E8E8">
+    <Grid>
+        <GroupBox x:Name="groupBox" Foreground="#FF990100" Header="Arrivals"  FontSize="40"  HorizontalAlignment="Center"  VerticalAlignment="Top" Height="350" Width="600">
+            <ListView  FontSize="15" ItemsSource="{Binding Arrivals}" Background="#FF333333" Foreground="Red">
+                <ListView.View>
+                    <GridView >
+                        <GridViewColumn Header="Arrival ID" Width="100" DisplayMemberBinding="{Binding ArrivalId}" />
+                        <GridViewColumn Header="Plane Numaber" Width="200" DisplayMemberBinding="{Binding PlaneNumber}" />
+                        <GridViewColumn Header="Arrival Time" Width="300" DisplayMemberBinding="{Binding Time}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </GroupBox>
+        <Button Name="refreshButton" Command="{Binding RefreshHistoryCommand}" Content="Refresh" FontSize="25" Width="200" Height="35" Margin="0,0,0,20" Background="#FF990100" Foreground="#FFF6F6F6" BorderBrush="{x:Null}"/>
+        <GroupBox x:Name="groupBox2" Foreground="#FF990100" Header="Departures" FontSize="40" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="0,350,0,0" Height="350" Width="600">
+            <ListView FontSize="15" ItemsSource="{Binding Departures}" Background="#FF333333" Foreground="Red" >
+                <ListView.View>
+                    <GridView >
+                        <GridViewColumn Header="Departure ID" Width="100" DisplayMemberBinding="{Binding DepartureId}" />
+                        <GridViewColumn Header="Plane Numaber" Width="200" DisplayMemberBinding="{Binding PlaneNumber}" />
+                        <GridViewColumn Header="Departure Time" Width="300" DisplayMemberBinding="{Binding Time}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </GroupBox>
+    </Grid>
+</UserControl>
