@@ -1,0 +1,16 @@
+-- add methods to rep interfaces
+-- create class of const stations values
+-- add unityContainter in all parts of projcet
+-- use stationsInfoService in Simulator
+--dont forget update state planes in the tower
+--dont forget updating the airport list and the queue
+**dont forget , simulator is adding to parking planes straight ahead from the arrival plane event
+**in tower there might be a departuring reference problem
+--make the db always updated on the airport state and arrivals/departures History
+--bubble events? is there a better way
+--fix problem that client will not yaspik to see plane that departure on 8 station
+-------flightControl rules---------
+1.a plane can start departure only if stations 0,1,2,3,7 are empty.
+2.a plane can start arrival/landing only if sations 0,1,2,3,7,4 are empty (4-can start parking)
+3 a) a plane that is in station 4 can only be in station 5\6 if one of them is empty.
+3 b) station 5 comes first if empty, then 6.
